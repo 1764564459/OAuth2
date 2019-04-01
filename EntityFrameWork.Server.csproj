@@ -92,6 +92,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeedData.cs" />
+    <Compile Include="UnitOfWork\Simple\IRepository\IRepository.cs" />
+    <Compile Include="UnitOfWork\Simple\Repository\Repository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt" />
@@ -101,10 +103,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="UnitOfWork\complex\IRepsitory\" />
-    <Folder Include="UnitOfWork\complex\Repsitory\" />
-    <Folder Include="UnitOfWork\Simple\IRepsitory\" />
-    <Folder Include="UnitOfWork\Simple\Repsitory\" />
+    <Folder Include="UnitOfWork\complex\IRepository\" />
+    <Folder Include="UnitOfWork\complex\Repository\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
