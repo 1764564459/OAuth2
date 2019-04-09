@@ -18,6 +18,7 @@ namespace EntityFrameWork.Server.Entity
 
         }
 
+        public DbSet<AppMenu> Menus { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

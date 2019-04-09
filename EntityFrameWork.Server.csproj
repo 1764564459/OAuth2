@@ -91,9 +91,15 @@
     <Compile Include="Helper\MongoDbHelper.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\complex\IRepository\IRepository.cs" />
+    <Compile Include="Repository\complex\Repository\Repository.cs" />
     <Compile Include="SeedData.cs" />
-    <Compile Include="UnitOfWork\Simple\IRepository\IRepository.cs" />
-    <Compile Include="UnitOfWork\Simple\Repository\Repository.cs" />
+    <Compile Include="Repository\Simple\IRepository\IRepository.cs" />
+    <Compile Include="Repository\Simple\Repository\Repository.cs" />
+    <Compile Include="UnitOfWork\complex\IUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\complex\UnitOfWork.cs" />
+    <Compile Include="UnitOfWork\Simple\IUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\Simple\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt" />
@@ -102,10 +108,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UnitOfWork\complex\IRepository\" />
-    <Folder Include="UnitOfWork\complex\Repository\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
