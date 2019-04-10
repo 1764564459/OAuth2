@@ -88,6 +88,7 @@
     <Compile Include="Entity\Auth\AppUserClaim.cs" />
     <Compile Include="Entity\Auth\AppUserLogin.cs" />
     <Compile Include="Entity\Auth\AppUserRole.cs" />
+    <Compile Include="Helper\GPS_To_Baidu.cs" />
     <Compile Include="Helper\MongoDbHelper.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -46,7 +46,7 @@ namespace OAuthServer.Controllers
         {
             var user = unit._Repository.GetAll<AppUser>();
             var data = GetList(o => o.Age > 20, p => p.Id, "desc");
-           var menu= _context.Menus;
+           var menu= _context.Menus;//直接获取实体对象
             return Json(new { data, user ,menu}, JsonRequestBehavior.AllowGet);
         }
 
