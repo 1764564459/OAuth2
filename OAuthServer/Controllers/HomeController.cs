@@ -1,20 +1,46 @@
 ﻿using EntityFrameWork.Server.Entity.Auth;
+using EntityFrameWork.Server.Helper;
 using EntityFrameWork.Server.UnitOfWork.complex;
+using Newtonsoft.Json;
 using OAuthServer.App_;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
 namespace OAuthServer.Controllers
 {
+  
     public class HomeController : BaseController
     {
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View();
+            MongoDbHelper mongo = new MongoDbHelper();
+            Random rand = new Random(10);
+            int rand_num= rand.Next(0, 1000);
+            //List< MyApp> user = new List<MyApp>()
+            // {
+            //    new MyApp (){
+            //        Id = Guid.NewGuid(),
+            //        Name = rand_num.ToString() ,
+            //        Age = 12,
+            //        Time = DateTime.UtcNow
+            //    }
+            // };
+            // var result = await mongo.Insert(user[0]);
+            //var result = mongo.GetList<MyApp>(1, 10, p => p.Time > DateTime.Parse("2019-4-13 15:00:00") && p.Time < DateTime.Parse("2019-4-13 15:27:00"), p => p.Time, "asc");
+            //string json_data = JsonConvert.SerializeObject(result);
+            //JsonConvert.PopulateObject(json_data, user);
+            //user.ForEach(item =>
+            //{
+            //    item.Time =item.Time.ToString();
+            //});
+            //var result= mongo.QueryOne<MyApp>();
+            //mongo.Delete<MyApp>(result);
+            return View(); // Json(result,JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult About()

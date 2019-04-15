@@ -105,6 +105,12 @@ namespace EntityFrameWork.Server.Helper
             return dgcj2bd;
         }
 
+        /// <summary>
+        /// 火星坐标转百度坐标
+        /// </summary>
+        /// <param name="lat"></param>
+        /// <param name="lon"></param>
+        /// <returns></returns>
         public static double[] gcj2bd(double lat, double lon)
         {
             double x = lon, y = lat;
@@ -115,6 +121,12 @@ namespace EntityFrameWork.Server.Helper
             return new double[] { bd_lat, bd_lon };
         }
 
+        /// <summary>
+        /// 百度坐标转火星坐标
+        /// </summary>
+        /// <param name="lat"></param>
+        /// <param name="lon"></param>
+        /// <returns></returns>
         public static double[] bd2gcj(double lat, double lon)
         {
             double x = lon - 0.0065, y = lat - 0.006;
@@ -125,6 +137,12 @@ namespace EntityFrameWork.Server.Helper
             return new double[] { gg_lat, gg_lon };
         }
 
+        /// <summary>
+        /// GPS 转 火星坐标
+        /// </summary>
+        /// <param name="lat"></param>
+        /// <param name="lon"></param>
+        /// <returns></returns>
         public static double[] wgs2gcj(double lat, double lon)
         {
             double dLat = transformLat(lon - 105.0, lat - 35.0);
@@ -141,6 +159,12 @@ namespace EntityFrameWork.Server.Helper
             return loc;
         }
 
+        /// <summary>
+        /// 转纬度
+        /// </summary>
+        /// <param name="lat"></param>
+        /// <param name="lon"></param>
+        /// <returns></returns>
         private static double transformLat(double lat, double lon)
         {
             double ret = -100.0 + 2.0 * lat + 3.0 * lon + 0.2 * lon * lon + 0.1 * lat * lon + 0.2 * Math.Sqrt(Math.Abs(lat));
@@ -150,6 +174,12 @@ namespace EntityFrameWork.Server.Helper
             return ret;
         }
 
+        /// <summary>
+        /// 转精度
+        /// </summary>
+        /// <param name="lat"></param>
+        /// <param name="lon"></param>
+        /// <returns></returns>
         private static double transformLon(double lat, double lon)
         {
             double ret = 300.0 + lat + 2.0 * lon + 0.1 * lat * lat + 0.1 * lat * lon + 0.1 * Math.Sqrt(Math.Abs(lat));

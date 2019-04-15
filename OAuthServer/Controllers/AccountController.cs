@@ -67,7 +67,7 @@ namespace OAuthServer.Controllers
             }
             var sigin = new SignInManager<AppUser, Guid>(UserManage, HttpContext.GetOwinContext().Authentication);
             var Result = await sigin.PasswordSignInAsync(users.UserName, model.Password, false, false);
-            return View(model);
+            return Redirect(Url.Action("Index", "Home"));
         }
         //
         // GET: /Account/Register
